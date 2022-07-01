@@ -1,6 +1,8 @@
 #🅿️SX
 ---
 
+↪__Forked from,__ https://github.com/michaeljones/packed.
+
 PSX provides [JSX](https://facebook.github.io/jsx/)-style syntax within
 Python files. It provides a system for converting:
 
@@ -51,7 +53,7 @@ should use the `.pyx` file extension. The command searches recursively through
 the provided directory:
 
 ```bash
-python -m PSX .
+python -m psx .
 ```
 
 Will write pure Python `.py` files for all `.pyx` files under the current
