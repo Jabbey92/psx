@@ -1,4 +1,11 @@
-""""""
+"""
+Extension to the Python language to support XML
+
+Forked from, https://github.com/michaeljones/packed. 
+
+Similar to JSX for Javascript but in Python!
+Designed for use with [PyScript](https://github.com/pyscript/pyscript)
+"""
 
 
 import functools
@@ -12,6 +19,7 @@ from pypeg2 import parse, compose, List, name, maybe_some, attr, optional, ignor
 
 whitespace = re.compile(r'\s+')
 text = re.compile(r'[^<]+')
+
 
 class Whitespace:
     """Matches one or more whitespace characters"""
