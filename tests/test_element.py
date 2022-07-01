@@ -1,16 +1,14 @@
-
 from __future__ import unicode_literals, print_function
 
 from unittest import TestCase
 
-from packed import Elem
+from psx.packed import Elem
 
 
 class TestElem(TestCase):
-
     def test_empty_elem(self):
 
-        elem = Elem('a')
+        elem = Elem("a")
 
         expected = "<a></a>"
 
@@ -18,7 +16,7 @@ class TestElem(TestCase):
 
     def test_elem(self):
 
-        elem = Elem('a', {}, Elem('b', {}))
+        elem = Elem("a", {}, Elem("b", {}))
 
         expected = "<a><b></b></a>"
 
@@ -26,7 +24,7 @@ class TestElem(TestCase):
 
     def test_empty_elem_single_attribute(self):
 
-        elem = Elem('a', {'class': 'some-icon'})
+        elem = Elem("a", {"class": "some-icon"})
 
         expected = '<a class="some-icon"></a>'
 
@@ -34,7 +32,7 @@ class TestElem(TestCase):
 
     def test_elem_single_attribute(self):
 
-        elem = Elem('a', {'class': 'some-icon'}, Elem('b', {}))
+        elem = Elem("a", {"class": "some-icon"}, Elem("b", {}))
 
         expected = '<a class="some-icon"><b></b></a>'
 
@@ -42,7 +40,7 @@ class TestElem(TestCase):
 
     def test_elem_multiple_attribute(self):
 
-        elem = Elem('a', {'class': 'some-icon', 'data-width': 800}, Elem('b', {}))
+        elem = Elem("a", {"class": "some-icon", "data-width": 800}, Elem("b", {}))
 
         expected = '<a data-width="800" class="some-icon"><b></b></a>'
 
@@ -50,7 +48,7 @@ class TestElem(TestCase):
 
     def test_elem_with_text_child(self):
 
-        elem = Elem('a', {}, 'My link text')
+        elem = Elem("a", {}, "My link text")
 
         expected = "<a>My link text</a>"
 

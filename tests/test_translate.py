@@ -1,13 +1,11 @@
-
 from __future__ import unicode_literals, print_function
 
 from unittest import TestCase
 
-from packed import translate
+from psx.packed import translate
 
 
 class TestTranslate(TestCase):
-
     def test_whitespace(self):
 
         code = """   """
@@ -355,7 +353,6 @@ def tag(self):
 
 
 class TestComponentTranslate(TestCase):
-
     def test_simple_component(self):
 
         code = """
