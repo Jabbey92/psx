@@ -1,23 +1,19 @@
+""""""
 
-from __future__ import unicode_literals, print_function
 
+import functools
 import inspect
+import os
 import re
 import sys
-import os
-import functools
 
 from pypeg2 import parse, compose, List, name, maybe_some, attr, optional, ignore, Symbol
-
-
-__version__ = '0.2.0'
 
 
 whitespace = re.compile(r'\s+')
 text = re.compile(r'[^<]+')
 
-
-class Whitespace(object):
+class Whitespace:
     """Matches one or more whitespace characters"""
 
     grammar = attr('value', whitespace)
@@ -28,7 +24,7 @@ class Whitespace(object):
         return "{indent}' '".format(indent=indent_str)
 
 
-class Text(object):
+class Text:
     """Matches text between tags and/or inline code sections."""
 
     grammar = attr('whitespace', optional(whitespace)), attr('value', re.compile(r'[^<{]+'))
@@ -42,7 +38,7 @@ class Text(object):
         )
 
 
-class String(object):
+class String:
     """Matches a double-quote delimited string."""
 
     grammar = '"', attr('value', re.compile(r'[^"]*')), '"'
@@ -51,7 +47,7 @@ class String(object):
         return "'%s'" % self.value
 
 
-class InlineCode(object):
+class InlineCode:
     """Matches arbitrary Python code within a curly braces."""
 
     grammar = '{', attr('code', re.compile(r'[^}]*')), '}'
@@ -64,7 +60,7 @@ class InlineCode(object):
         )
 
 
-class Attribute(object):
+class Attribute:
     """Matches an attribute formatted as either: key="value" or key={value} to handle strings and
     inline code in a similar style to JSX.
     """
@@ -103,7 +99,7 @@ class Attributes(List):
         return ''.join(text)
 
 
-class SelfClosingTag(object):
+class SelfClosingTag:
     """Matches a self-closing tag and all of its attributes."""
 
     grammar = '<', name(), attr('attributes', Attributes), ignore(whitespace), '/>'
@@ -141,7 +137,7 @@ class SelfClosingTag(object):
         return ''.join(text)
 
 
-class ComponentName(object):
+class ComponentName:
     """A standard name or symbol beginning with an uppercase letter.
 
     There are language implications of relying on an upper case letter. It seems reasonable to
@@ -168,7 +164,7 @@ class ComponentTag(SelfClosingTag):
         return self.name.compose()
 
 
-class PairedTag(object):
+class PairedTag:
     """Matches an open/close tag pair and all of its attributes and children.
     """
 
@@ -322,7 +318,7 @@ def to_html(entity):
         return unicode(entity)
 
 
-class Elem(object):
+class Elem:
     """Represents an HTML element. Packed translates the <a></a> into Elem('a') with an optional
     dictionary argument for attributes and further arguments being children.
 
@@ -366,7 +362,7 @@ class Elem(object):
         )
 
 
-class Component(object):
+class Component:
     """Simple component base class that exposes all incoming attributes in a self.props dictionary a
     little like the React components' this.props attribute.
     """
