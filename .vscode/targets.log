@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul 01 15:44:18 2022
+# Make data base, printed on Fri Jul 01 15:48:49 2022
 
 # Variables
 
@@ -25,7 +25,7 @@ LUA_INC = C:\Program Files\lua\include
 # environment
 LOCALAPPDATA = C:\Users\Owner\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-88cc5307-7bc5-4201-8734-350164bded35-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-05d033e0-1490-4874-b17f-2c74a038356c-sock
 # environment
 NDI_RUNTIME_DIR_V2 = C:\Program Files\NDI\NDI 5 Tools\Runtime
 # environment
@@ -191,7 +191,8 @@ NDI_RUNTIME_DIR_V5 = C:\Program Files\NDI\NDI 5 Tools\Runtime
 # environment
 PROGRAMFILES(X86) = C:\Program Files (x86)
 # environment
-USERDOMAIN_ROAMINGPROFILE = JABS-MAIN-PC
+USERDOMAIN_ROAMINGPROFILE = 
+ JABS-MAIN-PC
 # environment
 NUMBER_OF_PROCESSORS = 16
 # environment
@@ -296,6 +297,6 @@ test:
 # strcache performance: lookups = 25 / hit rate = 20%
 # hash-table stats:
 # Load=20/8192=0%, Rehash=0, Collisions=0/25=0%
-# Finished Make data base on Fri Jul 01 15:44:18 2022
+# Finished Make data base on Fri Jul 01 15:48:49 2022
 
  

@@ -1,8 +1,10 @@
-#PSX
+#🅿️SX
 ---
 
 PSX provides [JSX](https://facebook.github.io/jsx/)-style syntax within
 Python files. It provides a system for converting:
+
+😎 **Go from this:**
 
 ```py
 @PSX
@@ -11,7 +13,7 @@ def tag(self):
     return <a href={share}>Share on internet</a>
 ```
 
-To:
+✅ **To this:**
 
 ```py
 @PSX
@@ -26,10 +28,10 @@ def tag(self):
     )
 ```
 
-Which then renders to the appropriate HTML output when called.
+⚡ Render the appropriate HTML output when called!
 
 
-#Status
+#⌚Status
 ---
 
 This software is in alpha. There is a series of tests which cover the currently
@@ -40,7 +42,7 @@ create issues with any syntax that is not handled properly.
 welcome advice on this aspect.
 
 
-#Usage
+#🔌Usage
 -----
 
 The module can be called from the command line to find files with the **PSX**
@@ -56,12 +58,13 @@ Will write pure Python `.py` files for all `.pyx` files under the current
 directory.
 
 
-#Syntax
+#⌨️Syntax
 ---
 
 **PSX** supports basic HTML style syntax as well as creating your own custom tags
 or components. The term `component` is taken from [React](https://facebook.github.io/react/).
-A `component` should have a `render` method which returns `Elem` instances which are created from the **PSX** syntax.
+A `component` should have a `render` method which returns `Elem` instances which are created 
+from the **PSX** syntax.
 
 For example:
 
@@ -83,10 +86,11 @@ The `Component` base class exposes attributes passed in the HTML syntax as
 entries in the `props` dictionary in a similar style to React.
 
 
-#Credits
+#📜Credits
 ---
 
 PSX uses the [pypeg2](http://fdik.org/pyPEG/) library for the parsing and output of the Python files.
 
-The idea is, of course, inspired by [JSX](https://facebook.github.io/jsx/) from [Facebook](https://github.com/facebook).
+The idea is, of course, inspired by [JSX](https://facebook.github.io/jsx/) from 
+[Facebook](https://github.com/facebook).
 
