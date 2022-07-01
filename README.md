@@ -1,10 +1,7 @@
 #PSX
-======
+---
 
-.. image:: https://travis-ci.org/michaeljones/PSX.svg?branch=master
-    :target: https://travis-ci.org/michaeljones/PSX
-
-PSX provides (JSX)[https://facebook.github.io/jsx/]-style syntax within
+PSX provides [JSX](https://facebook.github.io/jsx/)-style syntax within
 Python files. It provides a system for converting:
 
 ```py
